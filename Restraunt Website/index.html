@@ -31,6 +31,8 @@
               <li><a href="about.html">About</a></li>
               <li><a href="sign-in.html">Sign In</a></li>
               <li><a href="sign-up.html">Sign Up</a></li>
+              <li id="mode-toggle">Toggle Dark/Light Mode</li>
+
             </b>
           </ul>
         </div>
@@ -159,6 +161,33 @@
       function currentSlide(n) {
         showSlides((slideIndex = n));
       }
+      const modeToggle = document.getElementById('mode-toggle');
+        const body = document.body;
+
+        let backgroundImageIndex = 0; // Initialize the index for background images
+
+        modeToggle.addEventListener('click', () => {
+          // Toggle between different background images based on the index
+          switch (backgroundImageIndex) {
+            case 0:
+              body.style.backgroundImage = "url('HD-wallpaper-plain-black-black.jpg')";
+              break;
+            case 1:
+              body.style.backgroundImage = "url('HD-wallpaper-plain-black-black.jpg')";
+              break;
+            // Add more cases for additional background images if needed
+
+            default:
+              // If the index exceeds the number of images, reset it to 0
+              backgroundImageIndex = 0;
+              body.style.backgroundImage = "url('photos.avif.jpg')"; // Set default background image
+              break;
+          }
+
+          // Increment the index for the next background image
+          backgroundImageIndex++;
+        });
+
     </script>
   </body>
 </html>
