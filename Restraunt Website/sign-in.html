@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Login Page</title>
+    <link rel="stylesheet" href="signinstyles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="main">
+      <div class="log">
+        <div class="input-group">
+          <input
+            type="text"
+            id="search"
+            name="search"
+            placeholder="Search Your Food Here"
+          />
+          <button type="submit">Search</button>
+        </div>
+        <ul>
+          <b
+            ><li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="sign-in.html">Sign In</a></li>
+            <li><a href="sign-up.html">Sign Up</a></li>
+          </b>
+        </ul>
+      </div>
+      <div class="body">
+        <div class="container">
+          <header>Login Page</header>
+          <form>
+            <div class="input-field">
+              <input type="email" id="email" name="email" required />
+              <label>Email</label>
+            </div>
+            <div class="input-field">
+              <input
+                class="pswrd"
+                type="password"
+                id="password"
+                name="password"
+                required
+              />
+              <span class="show" id="show-password">SHOW</span>
+              <label>Password</label>
+            </div>
+            <div class="button">
+              <div class="inner"></div>
+              <button id="submit">LOGIN</button>
+            </div>
+          </form>
+          <div class="auth">Or login with</div>
+          <div class="links">
+            <div class="facebook">
+              <i class="fab fa-facebook-square"><span>Facebook</span></i>
+            </div>
+            <div class="google">
+              <i class="fab fa-google-plus-square"><span>Google</span></i>
+            </div>
+          </div>
+          <div class="signup">
+            Not a member? <a href="sign-up.html">Signup now</a>
+          </div>
+        </div>
+      </div>
+      <footer>
+        <p>&copy; 2023 Our Restaurant. All rights reserved.</p>
+        <p>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+        </p>
+        <p>
+          <a href="#" class="fa fa-facebook"></a>
+          <a href="#" class="fa fa-twitter"></a>
+          <a href="#" class="fa fa-instagram"></a>
+        </p>
+      </footer>
+    </div>
+
+    <script>
+      //password => hide/show
+      document
+        .getElementById("show-password")
+        .addEventListener("click", (event) => {
+          const password_el = document.getElementById("password");
+          console.log("clikced", event.target, event.target.textContent);
+          const btn_el = event.target;
+          console.log(btn_el);
+          if (btn_el.textContent == "SHOW") {
+            btn_el.textContent = "HIDE";
+            password_el.setAttribute("type", "text");
+          } else {
+            btn_el.textContent = "SHOW";
+            password_el.setAttribute("type", "password");
+          }
+        });
+
+      //alert on submit
+      document.getElementById("submit").addEventListener("click", (event) => {
+        const email_el = document.getElementById("email");
+        const password_el = document.getElementById("password");
+        // alert("here");
+        if (email_el.value != "" && password_el.value != "") {
+          alert("Successfully Logged In!");
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home - Online FoodShop</title>
+    <link rel="stylesheet" href="indexstyle.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="main">
+      <div class="log">
+        <img src="logos.png" alt="Logo" />
+        <div class="input-group">
+          <input
+            type="text"
+            id="search"
+            name="search"
+            placeholder="Search Your Food Here"
+          />
+          <button type="submit">Search</button>
+        </div>
+        <div class="nav-link-container">
+          <ul>
+            <b>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="sign-in.html">Sign In</a></li>
+              <li><a href="sign-up.html">Sign Up</a></li>
+            </b>
+          </ul>
+        </div>
+      </div>
+
+      <h1>Welcome to Our Restaurant</h1>
+      <p>Experience the best dining experience with us.</p>
+      <div class="slideshow-container">
+        <div class="mySlides fade">
+          <img src="images1.avif" style="width: 100%" />
+        </div>
+
+        <div class="mySlides fade">
+          <img src="images2.avif" style="width: 100%" />
+        </div>
+
+        <div class="mySlides fade">
+          <img src="images3.avif" style="width: 100%" />
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+      <div style="text-align: center">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+      <section id="menu">
+        <h2>Our Menu</h2>
+        <p>
+          Our menu offers a variety of dishes from appetizers to main courses
+          and desserts. We use only fresh and high-quality ingredients to ensure
+          the best taste and flavor.
+          <a href="menu.html">View Menu</a>
+        </p>
+      </section>
+      <div class="container">
+        <video width="420" autoplay muted playsinline controls>
+          <source src="meal.mp4" type="video/mp4" />
+        </video>
+        <!-- <iframe
+        
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/xPPLbEFbCAo?si=0OWluQQT0YmswkQ6&amp&autoplay=1&mute=1&controls=0&showinfo=0&loop=1"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe> -->
+        <section id="specials">
+          <h2>Specials</h2>
+          <p>
+            We offer daily specials that are crafted by our skilled chefs. Check
+            out our specials and enjoy a unique dish today.
+          </p>
+          <h2>Our Cuisine</h2>
+          <p>
+            Our menu features a diverse selection of dishes crafted with care by
+            our talented chefs. From classic comfort foods to innovative
+            culinary creations, there's something for everyone to enjoy. We
+            source the freshest ingredients locally whenever possible, ensuring
+            each dish is bursting with flavor and quality.
+          </p>
+          <h2>Signature Dishes</h2>
+          <ul>
+            <li>
+              Grilled Salmon with Lemon Butter Sauce: Tender grilled salmon
+              fillet drizzled with a tangy lemon butter sauce, served with a
+              side of roasted vegetables and fluffy rice.
+            </li>
+            <li>
+              Truffle Risotto: Creamy Arborio rice cooked to perfection with
+              earthy truffle oil, finished with Parmesan cheese and fresh herbs.
+            </li>
+            <li>
+              New York Strip Steak: Juicy and flavorful New York strip steak
+              cooked to your liking, served with crispy fries and a side salad.
+            </li>
+          </ul>
+        </section>
+      </div>
+
+      <footer>
+        <p>&copy; 2023 Our Restaurant. All rights reserved.</p>
+        <p>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+        </p>
+        <p>
+          <a href="#" class="fa fa-facebook"></a>
+          <a href="#" class="fa fa-twitter"></a>
+          <a href="#" class="fa fa-instagram"></a>
+        </p>
+      </footer>
+    </div>
+
+    <script>
+      var slideIndex = 0;
+      showSlides();
+
+      function showSlides() {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+          slideIndex = 1;
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+        setTimeout(showSlides, 5000);
+      }
+
+      function plusSlides(n) {
+        showSlides((slideIndex += n));
+      }
+
+      function currentSlide(n) {
+        showSlides((slideIndex = n));
+      }
+    </script>
+  </body>
+</html>
